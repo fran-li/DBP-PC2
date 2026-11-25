@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getErrorMessage, getLocations } from '../api';
-import type { LocationsResponse } from '../types';
+import type { ItemsResponse } from '../types';
 
 
 export function useLocations(page: number) {

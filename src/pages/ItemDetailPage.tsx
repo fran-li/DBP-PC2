@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { ReportForm } from '../components/ReportForm';
-import { useLocation } from '../hooks/useLocation';
+import { useLocation } from '../hooks/useItem';
 import type { ReportCategory } from '../types';
 
 const categoryNames: Record<ReportCategory, string> = {

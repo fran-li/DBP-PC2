@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import type { Location } from '../types';
+import type { Item } from '../types';
 
 interface Props {
-  location: Location;
+  item: Item;
 }
 
-export function LocationCard({ location }: Props) {
+export function ItemCard({ item }: Props) {
   return (
     <article className="card">
       <h2 className="text-xl font-semibold">{location.name}</h2>

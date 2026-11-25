@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { LocationCard } from '../components/LocationCard';
+import { LocationCard } from '../components/ItemCard';
 import { Pagination } from '../components/Pagination';
-import { useLocations } from '../hooks/useLocations';
+import { useLocations } from '../hooks/useItems';
 
 export function LocationsPage() {
   const [page, setPage] = useState(1);

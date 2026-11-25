@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getErrorMessage, getLocation } from '../api';
-import type { LocationDetail } from '../types';
+import type { ItemDetail } from '../types';
 
 export function useLocation(id: number) {
-  const [location, setLocation] = useState<LocationDetail | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [item, setLocation] = useState<ItemDetail | null>(null);
+  const [item, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export function useLocation(id: number) {
       setLocation(result);
       setError('');
     } catch (err) {
-      setError(getErrorMessage(err, 'No se pudo actualizar el espacio.'));
+      setError(getErrorMessage(err, 'No se pudo actualizar los items'));
     }
   };
 

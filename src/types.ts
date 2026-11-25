@@ -26,6 +26,12 @@ export interface Activities{
   location: string;
 }
 
+export interface Item{
+  page: number;
+  size: number;
+  totalItems: number;
+  totalPages: number;
+}
 
 export interface Enrollments {
   id : number;

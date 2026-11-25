@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { useAuth } from './context/AuthContext';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
-import { LocationsPage } from './pages/LocationsPage';
-import { LocationDetailPage } from './pages/LocationDetailPage';
+import { ItemPage } from './pages/ItemPage';
+import { ItemDetailPage } from './pages/ItemDetailPage';
 
 function Protected({ children }: { children: ReactNode }) {
   const { token, logout } = useAuth();
@@ -16,7 +16,7 @@ function Protected({ children }: { children: ReactNode }) {
     <>
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4">
-          <span className="font-bold text-teal-800">Campus · Mantenimiento</span>
+          <span className="font-bold text-teal-800">Campus · Cultura</span>
           <button type="button" className="button-secondary" onClick={() => { logout(); navigate('/login'); }}>
             Cerrar sesión
           </button>

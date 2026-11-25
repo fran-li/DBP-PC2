@@ -75,7 +75,7 @@ export function LoginPage() {
         </button>
         <p className="mt-4 text-center text-sm">¿No tienes cuenta? <Link to="/register" className="text-teal-700 underline">Regístrate</Link></p>
       </form>
-      <p className="mt-4 text-center text-sm text-slate-600">Prueba: estudiante@example.test / Practica123</p>
+      <p className="mt-4 text-center text-sm text-slate-600">Prueba: ana@example.test / Practica123</p>
     </main>
   );
 }
