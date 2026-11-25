@@ -34,11 +34,11 @@ export default function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/activities" element={<Protected><ActivitiesPage /></Protected>} />
+      <Route path="/activities" element={<Protected><EnrollmentPage /></Protected>} />
      
-      <Route path="/activities/:id/enrollments" element={<Protected><ActivitiesPage /></Protected>} />
-      <Route path="/me/enrollments" element={<Protected><ActivitiesPage/></Protected>} />
-       <Route path="/enrollments/:id/withdraw" element={<Protected><ActivitiesPage/></Protected>} />
+      <Route path="/activities/:id/enrollments" element={<Protected><EnrollmentPage /></Protected>} />
+      <Route path="/me/enrollments" element={<Protected><EnrollmentPage/></Protected>} />
+       <Route path="/enrollments/:id/withdraw" element={<Protected><EnrollmentPage/></Protected>} />
       <Route path="*" element={<Navigate to="/activities" replace />} />
     </Routes>
   );
