@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { ReportForm } from '../components/ReportForm';
-import { useLocation } from '../hooks/useItem';
+import { useLocation } from '../hooks/useActivity';
 import type { ReportCategory } from '../types';
 
 const categoryNames: Record<ReportCategory, string> = {
@@ -9,20 +9,20 @@ const categoryNames: Record<ReportCategory, string> = {
   CLEANING: 'Limpieza',
 };
 
-export function LocationDetailPage() {
+export function EnrollmentDetailPage() {
   const { id } = useParams();
   const { location, loading, error, reload } = useLocation(Number(id));
 
   return (
     <main className="page">
-      <Link to="/locations" className="text-sm text-teal-700 underline">← Volver a espacios</Link>
-      {loading && <p className="mt-5" role="status">Cargando espacio...</p>}
+      <Link to="/enrollments" className="text-sm text-teal-700 underline">← Volver a inscripciones</Link>
+      {loading && <p className="mt-5" role="status">Cargando inscripciones</p>}
       {error && <p role="alert" className="error mt-5">{error}</p>}
 
       {!loading && location && (
         <>
           <section className="card mt-5">
-            <p className="text-sm font-semibold text-teal-700">{location.building} · Piso {location.floor}</p>
+            <p className="text-sm font-semibold text-teal-700">{enrollment.building} · Piso {location.floor}</p>
             <h1 className="mt-1 text-2xl font-bold">{location.name}</h1>
             <p className="mt-3">Reportes abiertos: <strong>{location.openReports}</strong></p>
             <p className={`mt-1 text-sm ${location.acceptsReports ? 'text-green-700' : 'text-red-700'}`}>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getErrorMessage, getLocations } from '../api';
-import type { ItemsResponse } from '../types';
+import type { EnrollmentResponse } from '../types';
 
 
 export function useLocations(page: number) {
-  const [data, setData] = useState<LocationsResponse | null>(null);
+  const [data, setData] = useState<EnrollmentResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -16,7 +16,7 @@ export function useLocations(page: number) {
 
     getLocations(page)
       .then(result => { if (active) setData(result); })
-      .catch(err => { if (active) setError(getErrorMessage(err, 'No se pudieron cargar los espacios.')); })
+      .catch(err => { if (active) setError(getErrorMessage(err, 'No se pudieron cargar las inscripciones.')); })
       .finally(() => { if (active) setLoading(false); });
 
     return () => { active = false; };

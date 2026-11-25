@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { useAuth } from './context/AuthContext';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
-import { ItemPage } from './pages/ItemPage';
-import { ItemDetailPage } from './pages/ItemDetailPage';
+import { ItemPage } from './pages/EnrollmentPage';
+import { ItemDetailPage } from './pages/EnrollmentDetailPage';
 
 function Protected({ children }: { children: ReactNode }) {
   const { token, logout } = useAuth();

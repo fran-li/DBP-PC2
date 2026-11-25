@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { getErrorMessage, getLocation } from '../api';
-import type { ItemDetail } from '../types';
+import { getErrorMessage, getActivity } from '../api';
+import type { ActivityDetail } from '../types';
 
-export function useLocation(id: number) {
-  const [item, setLocation] = useState<ItemDetail | null>(null);
+export function useItem(id: number) {
+  const [item, setActivity] = useState<ActivityDetail | null>(null);
   const [item, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (!Number.isSafeInteger(id) || id < 1) {
-      setLocation(null);
+      setEnrollment(null);
       setError('Identificador del espacio inválido.');
       setLoading(false);
       return;
@@ -17,11 +17,11 @@ export function useLocation(id: number) {
 
     let active = true;
     setLoading(true);
-    setLocation(null);
+    setActivity(null);
     setError('');
 
-    getLocation(id)
-      .then(result => { if (active) setLocation(result); })
+    getActivity(id)
+      .then(result => { if (active) setActivity(result); })
       .catch(err => { if (active) setError(getErrorMessage(err, 'No se pudo cargar el espacio.')); })
       .finally(() => { if (active) setLoading(false); });
 
@@ -31,13 +31,13 @@ export function useLocation(id: number) {
   
   const reload = async () => {
     try {
-      const result = await getLocation(id);
-      setLocation(result);
+      const result = await getActivity(id);
+      setActivity(result);
       setError('');
     } catch (err) {
       setError(getErrorMessage(err, 'No se pudo actualizar los items'));
     }
   };
 
-  return { location, loading, error, reload };
+  return { activity, loading, error, reload };
 }

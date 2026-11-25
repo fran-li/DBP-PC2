@@ -32,8 +32,11 @@ export interface Item{
   totalItems: number;
   totalPages: number;
 }
+export interface Enrollment{
+  experienceLevel: string;
+}
 
-export interface Enrollments {
+export interface EnrollmentResponse{
   id : number;
   resourceId:  number;
   resourceName: string;
